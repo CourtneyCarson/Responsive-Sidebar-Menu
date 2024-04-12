@@ -41,6 +41,7 @@
 </template>
 
 <script setup>
+// https://www.youtube.com/watch?v=Ul4KOXNQJSk
 import { ref } from 'vue';
 
 // store if the sidebar is open or closed so when users refresh it stays the same
