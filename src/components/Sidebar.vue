@@ -10,6 +10,29 @@
             </button>
         </div>
 
+
+        <h3>Menu</h3>
+        <div class="menu">
+            <router-link class="button" to="/">
+                <span class="material-icons">home</span>
+                <span class="text">Home</span>
+            </router-link>
+            <router-link class="button" to="/about">
+                <span class="material-icons">visibility</span>
+                <span class="text">About</span>
+            </router-link>
+            <router-link class="button" to="/">
+                <span class="material-icons">group</span>
+                <span class="text">Team</span>
+            </router-link>
+            <router-link class="button" to="/">
+                <span class="material-icons">email</span>
+                <span class="text">Contact</span>
+            </router-link>
+
+        </div>
+
+
     </aside>
 </template>
 
@@ -55,6 +78,32 @@ aside {
         position: relative;
         top: 0;
         transition: 0.2s ease-out;
+
+        .menu-toggle {
+            transition: 0.2s ease-out;
+
+            .material-icons {
+                font-size: 2rem;
+                color: var(--light);
+                transition: 0.2s ease-out;
+            }
+
+            &:hover {
+                color: var(--primary);
+                transform: translateX(0.5rem);
+            }
+        }
+    }
+
+
+    h3,
+    .button .text {
+        opacity: 0;
+        transition: 0.3s ease-out;
+    }
+
+    .menu {
+        margin: 0 -1rem;
     }
 
     &.is-expanded {
@@ -62,7 +111,21 @@ aside {
 
         .menu-toggle-wrap {
             top: -3rem;
+
+            .menu-toggle {
+                // flip the icon around
+                transform: rotate(180deg);
+            }
+
         }
+
+        h3,
+        .button .text {
+            opacity: 1;
+
+        }
+
+
     }
 
     @media (max-width: 768px) {
